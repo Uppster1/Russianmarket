@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bitcoin Payment Request</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #000022, #000044);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        #globe {
+            background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Digital_earth.png/600px-Digital_earth.png') no-repeat center;
+            background-size: cover;
+            width: 320px;
+            height: 320px;
+            border-radius: 50%;
+            box-shadow: 0 0 50px 20px #0044cc;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .orbit {
+            position: absolute;
+            width: 440px;
+            height: 440px;
+            border-radius: 50%;
+            border: 1px dashed rgba(255, 255, 255, 0.5);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: rotate 15s linear infinite;
+        }
+
+        .icon {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-color: white;
+            mask-size: contain;
+            mask-repeat: no-repeat;
+            mask-position: center;
+            animation: pulse 1.5s infinite;
+        }
+
+        .computer {
+            mask-image: url('https://upload.wikimedia.org/wikipedia/commons/3/37/Computer_icon.png');
+        }
+
+        .credit-card {
+            mask-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Credit-card-icon.png/50px-Credit-card-icon.png');
+        }
+
+        .icon1 {
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .icon2 {
+            top: 50%;
+            right: 0;
+            transform: translate(50%, -50%);
+        }
+
+        .icon3 {
+            bottom: 0;
+            left: 50%;
+            transform: translate(-50%, 50%);
+        }
+
+        .icon4 {
+            top: 50%;
+            left: 0;
+            transform: translate(-50%, -50%);
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.2);
+                opacity: 0.7;
+            }
+        }
+
+        @keyframes rotate {
+            from {
+                transform: translate(-50%, -50%) rotate(0deg);
+            }
+            to {
+                transform: translate(-50%, -50%) rotate(360deg);
+            }
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin: 15px 0;
+        }
+
+        p {
+            margin: 10px 0;
+            text-align: center;
+            line-height: 1.5;
+            font-size: 1.2rem;
+        }
+
+        .wallet-address {
+            margin-top: 5px;
+            font-size: 1.3rem;
+            color: #ffff00;
+        }
+    </style>
+</head>
+<body>
+    <h1>PLEASE SUBMIT PAYMENT IN <span style="color: yellow;">BITCOIN</span></h1>
+    <p>100$ = <span style="color: yellow;">0.00103892 BTC</span></p>
+    <p>Please send <span style="color: yellow;">BTC</span> to this address:</p>
+    <p class="wallet-address">bc1qcifxlwuy8kwfr9k0j2dzzv6507erlywpmp3m3w</p>
+    <div id="globe">
+        <div class="orbit">
+            <div class="icon computer icon1"></div>
+            <div class="icon credit-card icon2"></div>
+            <div class="icon computer icon3"></div>
+            <div class="icon credit-card icon4"></div>
+        </div>
+    </div>
+    <p style="font-size: 1.5rem;">Account not activated</p>
+    <p>To activate an account, make a deposit of $100 using the suggested method.</p>
+    <p>This amount will be added to balance.</p>
+</body>
+</html>
+
